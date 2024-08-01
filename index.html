@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <div class="slider">
+        <div class="thumbnail active" data-text="Apple" data-color="#fc4a55" onclick="showBigImage(this)">
+            <img src="https://images.pexels.com/photos/5528996/pexels-photo-5528996.jpeg?auto=compress&cs=tinysrgb&w=600"
+                alt="">
+        </div>
+        <div class="thumbnail" data-text="DragonFruit" data-color="#fb6cb2" onclick="showBigImage(this)">
+            <img src="https://images.pexels.com/photos/18916473/pexels-photo-18916473/free-photo-of-dragon-fruit-on-hot-pink-background.jpeg?auto=compress&cs=tinysrgb&w=600"
+                alt="">
+        </div>
+        <div class="thumbnail" data-text="Mango" data-color="#ffcc02" onclick="showBigImage(this)">
+            <img src="https://images.pexels.com/photos/918643/pexels-photo-918643.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                alt="">
+        </div>
+        <div class="thumbnail" data-text="PineApple" data-color="#ffb42b" onclick="showBigImage(this)">
+            <img src="https://images.pexels.com/photos/189268/pexels-photo-189268.jpeg?auto=compress&cs=tinysrgb&w=600"
+                alt="">
+        </div>
+        <div class="thumbnail" data-text="WaterMalon" data-color="#92ba3c" onclick="showBigImage(this)">
+            <img src="https://images.pexels.com/photos/1337825/pexels-photo-1337825.jpeg?auto=compress&cs=tinysrgb&w=600"
+                alt="">
+        </div>
+    </div>
+    <h2 class="text">Apple</h2>
+    <div class="bigimg">
+        <img src="https://images.pexels.com/photos/5528996/pexels-photo-5528996.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt="" id="bigimg">
+
+    </div>
+
+
+
+
+    <!-- <script src="./assets/js/script.js"></script> -->
+    <script>
+        // $(document).ready(function(){
+        function showBigImage(thumbnail) {
+            let bigImage = document.getElementById("bigimg");
+            let thumb = thumbnail.querySelector("img");
+            let h2 = document.querySelector("h2");
+            let color = thumbnail.dataset.color;
+            let text = thumbnail.dataset.text;
+
+            bigImage.src = thumb.src;
+            document.body.style.backgroundColor = color;
+            h2.textContent = text;
+            let thumbnails = document.querySelectorAll(".thumbnail");
+            thumbnails.forEach(thumb => thumb.classList.remove("active")
+
+            );
+        }
+        // })
+    </script>
+
+</body>
+
+</html>
